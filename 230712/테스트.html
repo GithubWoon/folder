@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>네이버 회원가입 폼</title>
+  <style>
+    .container {
+      /* background-color: red; */
+      width: 850px;
+      height: 500px;
+      margin: 0 auto;
+      border: 1px solid black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    img {
+      width: 200px;
+      margin-top: 40px;
+    }
+    form {
+      width: 800px;
+    }
+    ul {
+      list-style: none;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .title {
+      font-weight: bold;
+      width: 180px;
+      float: left;
+    }
+    .btn {
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="../images/naver.jpg" alt="네이버" />
+    <form>
+      <ul>
+        <li>
+          <label for="u_id" class="title">아이디</label>
+          <input type="text" id="u_id" required />
+        </li>
+
+        <li>
+          <label for="u_pw" class="title">비밀번호</label>
+          <input type="password" id="u_pw" required />
+        </li>
+
+        <li>
+          <label for="u_pwok" class="title">비밀번호 재확인</label>
+          <input type="password" id="u_pwok" required />
+        </li>
+
+        <li>
+          <label for="name" class="title">이름</label>
+          <input type="text" id="name" required />
+        </li>
+
+        <li>
+          <label for="date" class="title">생년월일</label>
+          <input type="text" id="date" placeholder="년(4자)" required />
+
+          <select id="date" size="1">
+              <option value="d" selected>월</option>
+              <option value="q">1월</option>
+              <option value="w">2월</option>
+              <option value="e">3월</option>
+              <option value="r">4월</option>
+              <option value="t">5월</option>
+              <option value="y">6월</option>
+              <option value="u">7월</option>
+              <option value="i">8월</option>
+              <option value="o">9월</option>
+              <option value="p">10월</option>
+              <option value="a">11월</option>
+              <option value="s">12월</option>
+          </select>
+
+          <input type="text" id="date" placeholder="일">
+        </li>
+
+        <li>
+          <label for="sex" class="title">성별</label>
+            <input type="radio" id="sex" value="male" />
+          남자
+            <input type="radio" id="sex" value="female" />
+          여자
+            <input type="radio" id="sex" value="no" />
+          선택안함
+          </label>
+        </li>
+
+        <li>
+          <label for="mail" class="title">본인 확인 이메일<small>(선택)</small></label>
+          <input type="email" id="mail" placeholder="선택입력" />
+        </li>
+
+        <li>
+          <label for="tel" class="title">휴대전화</label>
+          <select id="tel" size="1">
+            <option value="q">대한민국 +82</option>
+          </select>
+          <input type="tel" id="tel" placeholder="전화번호 입력" required />
+          <input type="button" id="tel" value="인증번호 받기" />
+          <input type="text" id="tel" placeholder="인증번호를 입력하세요" required />
+          </label>
+        </li>
+
+        <li>
+          <label for="join" class="title"></label>
+          <input type="submit" id="join" value="가입하기">
+        </li> <br><br>
+
+        <li>
+          <pre class="link">
+            <a href="#">이용약관</a> <a href="#">개인정보처리방침</a> <a href="#">책임의 한계와 법적고지</a> <a href="#">회원정보 고객센터</a> <a href="#">NAVER.com</a>
+          </pre>
+        </li>
+      </ul>        
+      </div>
+    </form>
+    
+    
+  </div>
+</body>
+</html>
