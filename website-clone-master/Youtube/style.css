@@ -1,0 +1,180 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #fff;
+  background-color: #181818;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+}
+
+/* root */
+:root {
+  --secondary-text: #aaa;
+  --blue: #3ea6ff;
+}
+
+/* header */
+header {display: flex; justify-content: space-between; align-items: center; background-color: #202020; padding: 0 20px; height: 56px;}
+header .menu_bar_logo {font-size: 20px;}
+header .menu_bar_logo .logo {display: inline-block; margin-left: 14px;}
+header .menu_bar_logo .logo i {color: red; margin-right: 4px;}
+header .search {display: none; width: 35%;}
+header .search input {width: calc(100% - 65px); background-color: #000; border: none; height: 30px; padding: 2px 6px; color: #f0f0f0; font-size: 16px; border: 1px solid rgba(255,255,255,0.2);}
+header .search button {width: 65px; height: 30px; color: rgba(255,255,255,0.5); background-color: rgba(255,255,255,0.08);}
+header .util a {margin-left: 24px;}
+header .util a:first-child {margin-left: 0;}
+header .util a.user {display: inline-block; width: 32px; height: 32px; background-color: orangered; border-radius: 50%; font-size: 13px; text-align: center; line-height: 32px;}
+
+/* main */
+main {padding: 20px 20px;}
+
+/* video */
+main .video .wrap {position: relative; width: 100%; height: 0; overflow: hidden; padding-bottom: 56.25%;}
+main .video iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+
+/* video_info */
+main .video_info .title {margin: 30px 0 20px 0; font-size: 18px;}
+main .video_info .etc {display: flex; justify-content: space-between; align-items: center; color: var(--secondary-text); font-size: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.14);}
+main .video_info .etc_left {padding-bottom: 14px;}
+main .video_info .etc_right i {margin-right: 6px;}
+main .video_info .etc_right li {display: inline-block; padding: 0 10px 14px 10px; margin: 0 -2px;}
+main .video_info .etc_right a.selected {color: var(--blue);}
+main .video_info .etc_right li.upAndDown {border-bottom: 2px solid var(--blue);}
+
+main .creator_info {border-bottom: 1px solid rgba(255, 255, 255, 0.14); padding: 14px 0;}
+main .creator_info .top {display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;}
+main .creator_info .top .name {flex: 1; padding-left: 14px;}
+main .creator_info .top .name h2 {display: inline-block; font-size: 14px;}
+main .creator_info .top .name span {font-size: 13px; color: var(--secondary-text);}
+main .creator_info .top .subscribe button {padding: 10px 16px; color: var(--secondary-text); background-color: rgba(255,255,255,0.1);}
+main .creator_info .top .subscribe i {color: var(--secondary-text); margin: 0 10px;}
+
+main .creator_info .bottom .disc {margin-left: 64px; font-size: 14px;}
+main .creator_info .bottom .disc .more_txt {display: inline-block; color: var(--secondary-text); margin-top: 14px; cursor: pointer;}
+main .creator_info .bottom .disc .time {color: var(--blue); cursor: pointer;}
+main .creator_info .bottom .disc a {color: var(--blue);}
+main .creator_info .bottom .disc .etc {margin-top: 10px;}
+main .creator_info .bottom .disc .category {display: inline-block; width: 110px; color: var(--secondary-text);}
+main .creator_info .bottom .disc .scienceTech {color: var(--blue);}
+main .creator_info .bottom .more {display: none;}
+
+/* next_video */
+main .next_video {margin-top: 24px;}
+main .next_video .tit_and_util {display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;}
+main .next_video .tit_and_util h2 {font-size: 16px;}
+main .next_video .tit_and_util span {font-size: 13px; color: var(--secondary-text);}
+
+main .next_video .video_and_info {display: flex; margin-bottom: 8px;}
+main .next_video .video_and_info.first {padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.14);}
+main .next_video .video_and_info img {margin-right: 10px; height: 100%;}
+main .next_video .video_and_info .top {display: flex;}
+main .next_video .video_and_info .top i {color: var(--secondary-text); margin: 3px 0 0 10px;}
+main .next_video .video_and_info h2 {font-size: 14px; margin-bottom: 4px; height: 40px; text-overflow: ellipsis; overflow: hidden;}
+main .next_video .video_and_info span {display: block; font-size: 13px; color: var(--secondary-text);}
+main .next_video .moreBtn {width: 100%; color: var(--blue); background-color: transparent; border: 1px solid var(--blue); padding: 10px 0;}
+
+/* comment */
+main .comment {margin-top: 24px;}
+main .comment .util {display: flex; margin-bottom: 24px;}
+main .comment .util h2 {font-size: 16px; margin-right: 30px;}
+main .comment .util span {font-size: 14px; color: var(--secondary-text);}
+main .comment .add_comment {margin-bottom: 20px; display: flex; align-items: flex-start;}
+main .comment .add_comment a {display: inline-block;width: 40px; height: 40px; background-color: orangered; border-radius: 50%; font-size: 15px; text-align: center; line-height: 40px; margin-right: 20px;}
+main .comment .add_comment .right {flex: 1;}
+main .comment .add_comment .right .btn {text-align: right; margin-top: 10px;}
+main .comment .add_comment .right .btn button {padding: 10px 24px; border-radius: 3px; font-size: 14px;}
+main .comment .add_comment .right .btn button:first-child {background-color: transparent; color: var(--secondary-text); margin-right: 10px;}
+main .comment .add_comment .right .btn button:last-child {background-color: rgba(255,255,255,0.3);}
+main .comment .add_comment .right input {width: 100%; font-size: 15px; color: var(--secondary-text); background-color: transparent; border: none; border-bottom: 1px solid rgba(255, 255, 255, 0.14); padding-bottom: 6px;}
+main .comment .add_comment .right input::placeholder {color: var(--secondary-text); font-size: 15px;}
+main .comment .add_comment .right input:focus {outline: none;}
+
+main .comment .user-container {display: flex; margin-bottom: 24px;}
+main .comment .user-container > img {width: 40px; height: 40px; margin-right: 20px;}
+main .comment .user-container .right {color: var(--secondary-text);}
+main .comment .user-container .right .fixed {font-size: 13px; color: var(--secondary-text); margin-bottom: 10px;}
+main .comment .user-container .right .name {font-size: 13px; color: #fff; margin-right: 4px;}
+main .comment .user-container .right .name.creator {display: inline-block; background-color: var(--secondary-text); padding: 3px 6px; border-radius: 20px;}
+main .comment .user-container .right .modi {font-size: 13px; color: var(--secondary-text);}
+main .comment .user-container .right .user-comment {font-size: 14px; color: #fff; margin: 4px 0 12px 0;}
+main .comment .user-container .right i {margin-right: 14px; font-size: 13px;}
+main .comment .user-container .right img {vertical-align: top; margin-right: 10px;}
+main .comment .user-container .right span {font-size: 13px;}
+
+/* media query */
+@media screen and (max-width: 659px) {
+  main .video_info .etc {
+    display: block;
+  }
+  main .video_info .etc .etc_right {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 4px;
+  }
+  main .video_info .etc .etc_right i {
+    display: block;
+    padding-left: 5px;
+    margin-bottom: 5px;
+  }
+  main .video_info .etc .etc_right .upAndDown {
+    border-bottom: none;
+  }
+}
+@media screen and (min-width: 660px) {
+  
+  header .util .fa-search {
+    display: none;
+  }
+  header .search {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    display: grid;
+    grid-template-columns: 7.6fr 2.4fr;
+    grid-gap: 0 20px;
+  }
+  main .video_info {
+    grid-row: 2;
+  }
+  main .comment {
+    grid-row: 3;
+  }
+  main .next_video {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  main {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
