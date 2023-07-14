@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container {width: 100%; margin: 0 auto; }
+        .container {
+          width: 100%; 
+          margin: 0 auto;
+        }
+
+        .container2 {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
 
 /* header */
 .main {display: flex; align-items: center; justify-content: space-between; height: 56px; font-size: 13px;}
@@ -21,13 +31,29 @@ ul, li {
   margin: 0;
   padding: 0;
 }
-    </style>
+
+/* main */
+main {
+  background-image: url(../images/커피.jpg);
+  background-position: center center; /* 가로 센터, 세로센터 */
+  background-repeat: no-repeat;
+  width: 500px;
+  height: 400px;
+}
+
+/* footer */
+ex2 {
+
+}
+  </style>
 </head>
 
 <body>
+        <!-- 헤더 -->
         <header>
         
-          <div class="container"> 
+          <div class="container"> <!-- main + select-menu -->
+            
             <div class="main">
               <a href="#" title="블루보틀" class="logo">
                 <img src="../images/블루보틀.png" alt="블루보틀">
@@ -40,5 +66,15 @@ ul, li {
                 <li><a href="#"> COMPANY </a></li>
                 <li><a href="#"> NEWS </a></li>
               </ul>
+            </div>
+          </header>
+        
+        <!-- 메인-->
+        <main>
+          <div class="container2">
+            <div class="overlay-text">어려워요</div>
+          </div>
+        </main>
+        
 </body>
 </html>

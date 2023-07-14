@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <sytle>
+        div a {
+            displa: flex;
+        }
+
+        .wrap {
+            border: solid;
+            width: 100px;
+        }
+
+        .wrap:hover .smWrap {
+            display: block;
+        }
+
+        .smWrap {
+            display: none;
+        }
+    </sytle>
+</head>
+<body>
+    <div class="wrap">
+        <button> 드롭다운 </button>
+        <div class="smWrap">
+            <a href="#"> 서브메뉴1 </a>
+            <a href="#"> 서브메뉴2 </a>
+            <a href="#"> 서브메뉴3 </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+header {
+  background-image: url(../images/연한배경.webp);
+  padding: 20px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+h1 {
+  color: black;
+}
+
+h3 {
+  color: black;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .first {
+    flex: 1;
+    margin-right: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: pink;
+    font-size: larger;
+  }
+  
+  .second {
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: skyblue;
+  }
+  
+  .third {
+    flex: 1;
+    margin-left: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: coral;
+  }
+  
+
+footer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
