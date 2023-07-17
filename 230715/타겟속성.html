@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> a 태그 타겟 스타일 속성 </title>
+    <style>
+        [target] /* 속성중 target이 있는 요소선택 */
+        
+        {
+            background-color: skyblue;
+            color: black;
+        }
+
+        [target=_blank] /* 중요 */ {
+            background-color: pink;
+            color: black;
+        }
+        [title~="웹"] {
+            background-color: brown;
+            color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div> 
+        <p> 배고파요 
+            <a href="#"><i> 웹 기획</i> 시작 </a>
+        </p>
+
+        <p><a href="#" target="_self" title 앱 기획></a></p>
+        <p><a href="#" target="_blank" title 앱 스토리보드></a></p>
+        <p><a href="#" target="_앱 스토리텔링" title 앱 스토리텔링></a></p>
+
+        <div>
+            <h1 class="section" title="선택자 스타일 지정"> 선택자 스타일 지정 </h1>
+            <p class="text-web" title="웹 디자이너"> 웹 디자이너 </p>
+        </div>
+        
+        <p><a href="#" target="_self" title 앱 기획> </p>
+        <p><a href="#" target="_blank" title 앱 스토리보드> </p>
+        <p><a href="#" target="_앱 스토리텔링" lang="en" title="앱 스토리텔링" > </p>
+
+        <p><a href="#" target="_self" title 앱 기획> </p>
+        <p><a href="#" target="_self" title 앱 기획> </p>
+        <p><a href="#" target="_self" title 앱 기획> </p>
+        
+    </div>    
+</body>
+</html>

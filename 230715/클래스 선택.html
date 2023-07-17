@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클래스 선택자</title>
+
+    <style>
+      div > p {
+        background-color: skyblue;
+      }
+
+      /* div > p: div 자손요소 p 클래스 선택 */
+      /* div + p: div 요소의 형제인 p 요소중 1번째 p요소 */
+
+      h2 + p {
+        background-color: orange;
+      }
+
+      /* h2 요소 바로 다음 p형제 요소 1개 선택 */
+    </style>
+
+  </head>
+
+  <body>
+
+    <h1 class="section"> 선택자 Selector 스타일 지정 </h1>
+    <p> 감자 </p>
+
+    <div>
+      <h1>선택자 스타일 지정</h1>
+      <h2> 크로스 브라우징 </h2>
+      <p>웹 디자이너</p>
+      <p>웹 퍼블리셔</p>
+    </div>
+
+    <p> 기획 </p>
+    <p> 스토리보드 </p>
+    <p> 스토리텔링 </p>
+
+  </body>
+</html>

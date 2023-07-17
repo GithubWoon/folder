@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상요소연습</title>
+    <style>
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .ul li:nth-child(1) {
+        color: pink;
+      }
+
+      .ul li:nth-child(1) a {
+        text-decoration: none;
+        color: black;
+        background-color: aqua;
+      }
+
+      .ul li:nth-child(1) a:hover {
+        text-decoration: underline;
+      }
+
+      .ul li:nth-child(4) {
+        color: red;
+      }
+
+      .ul li:nth-child(6) {
+        color: pink;
+      }
+
+      .ul li:nth-child(7) {
+        color: yellowgreen;
+      }
+
+      .ul li:nth-child(8) {
+        color: yellowgreen;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="ul">
+      <h1>제품목록</h1>
+      <ul>
+        <li><a href="#"> 주문폭주!</a> 제품 A</li>
+        <li>제품 B</li>
+        <li>제품 C</li>
+        <li>제품 D</li>
+        <li>제품 E</li>
+        <li>제품 F</li>
+        <li>제품 G</li>
+        <li>제품 H</li>
+      </ul>
+    </div>
+  </body>
+</html>
+
+<!-- A,F 분홍색 + D는 빨간색 + G,H 초록색 -->
