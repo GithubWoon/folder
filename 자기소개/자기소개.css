@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
+
+header {
+  padding: 20px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: skyblue;
+}
+
+h1 {
+  color: black;
+  font-family: 'Cute Font', cursive;
+  font-size: 80px;
+}
+
+h3 {
+  color: black;
+  
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.menu ul {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  border: 0px solid;
+  
+}
+
+.first {
+  list-style-type: none;
+  background-color: lightpink;
+  color: black;
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 100px;
+  width: 50px;
+  
+}
+
+.first img {
+  width: 40px;
+  height: 40px;
+}
+
+.first .dropdown1 {
+  display: none;
+}
+
+.first:hover .dropdown1{
+  display: block;
+}
+.second {
+  list-style-type: none;
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 100px;
+  width: 50px;
+  position: realtive;
+}
+
+.second ul {
+  list-style-type: none;
+}
+
+.third {
+  list-style-type: none;
+  background-color: aquamarine;
+  color: black;
+  text-align: center;
+  line-height: 100px;
+  width: 50px;
+  font-size: 1.5em;
+}
+
+.third ul li {
+  list-style-type: none;
+  font-size: 0.8em;
+  line-height: 40px;
+  
+}
+
+a {
+  text-decoration: none;
+}
+
+footer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}

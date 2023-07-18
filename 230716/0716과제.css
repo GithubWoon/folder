@@ -1,0 +1,41 @@
+* {
+  background-color: peachpuff;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  height: 600px;
+}
+
+.section1 {
+  background-color: lightblue;
+
+}
+
+.section2 {
+  background-color: lightblue;
+}
+
+.section3 {
+  background-color: lightblue;
+}
+
+.section1,
+.section2,
+.section3 {
+  flex-basis: calc(100% / 3);
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 100px; /* 좌우 간격을 10px로 설정 */
+}
+
+.section1 li,
+.section2 li,
+.section3 li {
+  background-color: inherit;
+  list-style-type: none;
+}

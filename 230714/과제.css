@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
+
 header {
   padding: 20px;
   text-align: center;
@@ -8,10 +10,13 @@ header {
 
 h1 {
   color: black;
+  font-family: 'Cute Font', cursive;
+  font-size: 80px;
 }
 
 h3 {
   color: black;
+  
 }
 
 .menu {
