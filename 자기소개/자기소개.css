@@ -1,11 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
 
+body {
+  padding: 20px;
+  text-align: center;
+  background-image: url("../images/개발진스.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  color: black;
+  
+}
 header {
   padding: 20px;
   text-align: center;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: skyblue;
+  
 }
 
 h1 {
@@ -16,13 +26,11 @@ h1 {
 
 h3 {
   color: black;
-  
 }
 
 .menu {
   display: flex;
   justify-content: space-between;
-  
 }
 
 .menu ul {
@@ -30,18 +38,42 @@ h3 {
   margin: 10px;
   padding: 20px;
   border: 0px solid;
-  
+  animation: slideAni 4s infinite;
 }
+
+.menu-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: right;
+  list-style-type: none;
+}
+
+
+@keyframes slideAni {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(10%);
+  }
+
+  50% {
+    transform: translateX(-10%);
+  }
+}
+
 
 .first {
   list-style-type: none;
-  background-color: lightpink;
+  
   color: black;
   font-size: 1.5em;
   text-align: center;
   line-height: 100px;
   width: 50px;
-  
 }
 
 .first img {
@@ -53,18 +85,19 @@ h3 {
   display: none;
 }
 
-.first:hover .dropdown1{
+.first:hover .dropdown1 {
   display: block;
 }
+
 .second {
   list-style-type: none;
-  background-color: white;
+  
   color: black;
   text-align: center;
   font-size: 1.5em;
   line-height: 100px;
   width: 50px;
-  position: realtive;
+  position: relative;
 }
 
 .second ul {
@@ -73,7 +106,7 @@ h3 {
 
 .third {
   list-style-type: none;
-  background-color: aquamarine;
+  
   color: black;
   text-align: center;
   line-height: 100px;
@@ -85,15 +118,17 @@ h3 {
   list-style-type: none;
   font-size: 0.8em;
   line-height: 40px;
-  
 }
 
 a {
   text-decoration: none;
 }
 
+li a {
+  color: black;
+}
 footer {
-  background-color: #f0f0f0;
+ 
   padding: 20px;
   text-align: center;
 }
