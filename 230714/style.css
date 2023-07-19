@@ -38,7 +38,7 @@ menu박스 가운데정렬, 글자가운데 정렬 */
 		display:none;
 		position: absolute;
 		font-size:14px;
-		background: skyblue;
+		background: white;
 	}
 
     #menu > ul > li:hover > ul {
