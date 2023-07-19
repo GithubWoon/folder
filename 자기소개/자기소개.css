@@ -158,3 +158,8 @@ footer {
   padding: 20px;
   text-align: center;
 }
+
+footer img {
+  width: 40px;
+  height: 40px;
+}
