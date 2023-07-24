@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>event 객체를 함수의 인수로 사용한다</p>
+    <img src="../images/개발진스.png" ; id="pic" />
+
+    <script>
+      let $pic = document.querySelectior("#pic");
+      $pic.onclick = function (event) {
+        alert(
+          "이벤트 유형:" +
+            event.type +
+            ", 이벤트 발생위치: " +
+            event.pageX +
+            "," +
+            even.pageY
+        );
+
+        // 이미지 경로확인
+        alert("클릭 이지미 파일: " + this.src);
+      };
+    </script>
+  </body>
+</html>
