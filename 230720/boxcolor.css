@@ -1,0 +1,10 @@
+#colorBox {
+    width: 200px;
+    height: 200px;
+    background-color: #ccc;
+    margin: 50px auto;
+  }
+  button {
+    padding: 10px 20px;
+    margin: 10px auto;
+  }
