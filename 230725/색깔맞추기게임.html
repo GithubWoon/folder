@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Matching Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #score {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    #colorBox {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      border: 2px solid #333;
+    }
+    .colorButton {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Color Matching Game</h1>
+  <h2> 10초동안 주어진 색상에 맞는 버튼을 클릭하세요</h2>
+  <div id="score">Score: 0</div>
+  <div id="colorBox"></div>
+  <div>
+    <button class="colorButton" onclick="checkColor('red')">Red</button>
+    <button class="colorButton" onclick="checkColor('green')">Green</button>
+    <button class="colorButton" onclick="checkColor('blue')">Blue</button>
+  </div>
+
+  <script>
+    let score = 0;
+    let timeLeft = 10;
+    let intervalId;
+
+    function getRandomColor() {
+      const colors = ['red', 'green', 'blue'];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    function updateColorBox() {
+      const colorBox = document.getElementById('colorBox');
+      colorBox.style.backgroundColor = getRandomColor();
+    }
+
+    function checkColor(color) {
+      const colorBox = document.getElementById('colorBox');
+      if (color === colorBox.style.backgroundColor) {
+        score++;
+        document.getElementById('score').innerText = 'Score: ' + score;
+      }
+      updateColorBox();
+    }
+
+    function countdown() {
+      if (timeLeft > 0) {
+        timeLeft--;
+      } else {
+        clearInterval(intervalId);
+        alert('Time is up! Your final score is ' + score);
+        score = 0;
+        timeLeft = 30;
+        document.getElementById('score').innerText = 'Score: 0';
+        updateColorBox();
+        intervalId = setInterval(countdown, 1000);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      updateColorBox();
+      intervalId = setInterval(countdown, 1000);
+    });
+  </script>
+</body>
+</html>

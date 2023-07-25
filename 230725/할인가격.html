@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할인 가격 계산</title>
+    <style>
+        body {
+            background-color: skyblue;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/개발진스.png"> <br>
+    <label for="oriprice">원래 가격:</label>
+    <input type="number" id="oriprice">
+    <br>
+    <label for="discountRate">할인율(%):</label>
+    <input type="number" id="disRate">
+    <br>
+    <button onclick="discountPrice()">할인 가격 계산</button>
+    <p id="result"></p>
+
+   <script src="할인가격.js"></script>
+</body>
+</html>

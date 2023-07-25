@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 220px;
+        }
+    </style>
+</head>
+<body>
+    <p>이미지 직접클릭</p>
+    <img src="../images/개발진스.png" id="myimg">
+
+    <script>
+        // 이하동일
+        // $myimg.addEventListener("mouseover", changePic1);
+        // $myimg.addEventListener("mouseout", changePic2);
+        
+        let $myimg = document.getElementById('myimg')
+        $myimg.onclick = changePic;
+        
+        
+        function changePic(){
+            $myimg.src = "../images/개발진스2.png"
+        }
+
+        function changePic2(){
+            $myimg.src = "../images/개발진스3.png"
+        }
+    </script>
+</body>
+</html>

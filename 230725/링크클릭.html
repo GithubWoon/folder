@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            font-size: 120px;
+            color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.naver.com">click</a>
+
+    <script>
+        const link = document.querySelector("a");
+
+        link.addEventListner("click", (e) => {
+            // preventDefault 는 기본기능을 실행하지 말라는 명령어
+            // 링크 클릭시 기본 기능인 링크 이동을 막고 콘솔창에 텍스트가 나타나도록 했음
+            
+            e.preventDefault();
+            console.log("링크 클릭했습니다");
+        });
+        
+    </script>
+</body>
+</html>

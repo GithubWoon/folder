@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 매개변수란? fucntion 괄호 안에 들어가있는 요소
+
+        // 매개변수 1개일때
+
+        // let hi = function(user){
+        //     document.write(user + "님, 안녕하세요?");
+        // }
+        // hi(); 함수실행
+
+        let hi = user => document.write(user + "님, 안녕하세요?");
+        hi();
+
+        // 매개변수 2개일때
+        // let sum = function(a, b){
+        //     return a + b;
+        // }
+        // console.log(sum(2, 3));
+        // let sum = (a, b) => { return a + b}
+        // console.log(sum(4, 5));
+
+        let sum = (a, b) => { return a + b}
+        console.log(sum(4, 5));
+    </script>
+</body>
+</html>
