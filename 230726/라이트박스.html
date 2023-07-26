@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>작은이미지큰이미지</title>
+    <style>
+      /* Hide the modal by default */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      /* Style the modal image */
+      #modalImage {
+        display: block;
+        max-width: 80%;
+        max-height: 80%;
+        margin: auto;
+        margin-top: 10%;
+      }
+
+      /* Style the close button (x) */
+      .close {
+        color: white;
+        font-size: 40px;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        cursor: pointer;
+      }
+
+      /* Style the image gallery */
+      .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .gallery-image {
+        width: 150px;
+        height: 150px;
+        cursor: pointer;
+      }
+
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>작은 이미지를 누르면 이미지가 모달창 형식으로 크게 나와요</h1>
+<!--평상시 화면-->
+    <div class="image-gallery"> 
+      <img src="../images/개발진스.png" alt="이미지1" class="gallery-image" />
+      <img src="../images/개발진스2.png" alt="이미지2" class="gallery-image" />
+      <img src="../images/개발진스3.png" alt="이미지3" class="gallery-image" />
+    </div>
+
+<!--모달 화면-->
+    <div class="modal" id="modal"> 
+        <!-- 1개의 이미지에는 1개의 모달창이 뜨기 떄문에 id로 여러개의 모달창을 통합-->
+      <span class="close" id="closeModal">&times;</span> <!--닫기 버튼을 만들어줌-->
+      <img src="" alt="모달 이미지" id="modalImage" />
+    </div>
+
+    <script>
+      // 모달과 이미지 요소 가져오기
+      const modal = document.getElementById("modal");
+      const modalImage = document.getElementById("modalImage");
+      const closeModal = document.getElementById("closeModal");
+      const galleryImages = document.querySelectorAll(".gallery-image"); // gallery-image 들을 다 불러와야함
+
+      // 모달 열기 및 클릭한 이미지 표시
+      galleryImages.forEach((image) => {
+        image.addEventListener("click", () => {
+          modal.style.display = "block";
+          modalImage.src = image.src; // src 속성에 이미지 넣어줌
+        });
+      });
+
+      // 닫기 버튼 클릭시 모달 닫기
+      closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      // 모달 바깥 영역 클릭시 모달 닫기
+      window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+
+      // 보통 변수명 = 요소명 일치시켜주는게 더 가독성 있고 편함
+    </script>
+  </body>
+</html>

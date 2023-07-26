@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="tabs">
+        <button class="tab-button">탭1</button>
+        <button class="tab-button">탭2</button>
+        <button class="tab-button">탭3</button>
+    </div>
+
+    <div id="tab1" class="tab-content active">
+        <h3>탭 1의 제목</h3>
+        <pre>
+            탭1의 내용입니다
+            탭1의 내용입니다
+            탭1의 내용입니다
+        </pre>
+    </div>
+
+    <div id="tab2" class="tab-content">
+        <h3>탭 2의 제목</h3>
+        <pre>
+            탭2의 내용입니다
+            탭2의 내용입니다
+            탭2의 내용입니다
+        </pre>
+    </div>
+
+    <div id="tab3" class="tab-content">
+        <h3>탭 3의 제목</h3>
+        <pre>
+            탭3의 내용입니다
+            탭3의 내용입니다
+            탭3의 내용입니다
+        </pre>
+    </div>
+
+    <script>
+    
+        function openTab(evt, tabName){ // evt, tabName 은 매개변수
+            // 모든 탭 내용 안보이게
+            const tabContents = document.querySelectorAll(".tab-content"); // tabContents 라는 단어를 만들고(?) 개념을 정의해줬음
+            for(const content of tabContents){
+                content.style.display = 'none';
+            }
+
+            // 모든 탭 버튼에서 active 클래스 제거
+            const tabButtons = document.querySelectorAll(".tab-button");
+            for(const button of tabButtons){
+                button.classList.remove('active'); // remove 제거 메서드
+            }
+
+            // 선택한 탭 내용을 보여주고 active 클래스 추가
+            document.getElementById(tabName).style.display = 'block';
+            evt.currentTarget.classList.add('active'); // add 추가 메서드
+        }
+
+        // 페이지 열리면 첫번째 탭 보이게
+        document.getElementById('tab1').style.display = 'block';
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <div id="container">
+    <h1>총 주문 가격확인</h1>
+
+    <!--기본가격 fieldset-->
+    <fieldset>
+      <legend>가격</legend>
+      10000원
+    </fieldset>
+
+    <!--추가 주문 fieldset-->
+    <fieldset>
+      <legend>추가옵션</legend>
+      <form>
+        <label for="option1"> <!-- input type가 함수호출-->
+          <input type="checkbox" id="option1" value="1200" onchange="updatePrice()">기장추가(+1200원)
+        </label>
+
+        <label for="option2">
+          <input type="checkbox" id="option2" value="3000" onchange="updatePrice()">배송비용(+3000원)
+        </label>
+
+        <label for="option3">
+          <input type="checkbox" id="option3" value="800" onchange="updatePrice()">산간지역(+800원)
+        </label>
+
+        <label for="option4">
+          <input type="checkbox" id="option4" value="4800" onchange="updatePrice()">양말(+4800원)
+        </label>
+
+        <label for="option5">
+          <input type="checkbox" id="option5" value="2400" onchange="updatePrice()">선물포장(+2400원)
+        </label>
+      </form>
+    </fieldset>
+
+    <!--합계 fieldset-->
+    <fieldset>
+      <legend>합계</legend>
+      <label for="total">
+        <input type="text" id="total" value="10000원">
+      </label>
+    </fieldset>
+  </div>
+
+  <script>
+    let price = 10000;
+
+    // 체크박스에 체크하거나 해제할때마다 가격 수시로 업데이트됨
+    function updatePrice() {
+      price = 10000; // 기본 가격으로 초기화
+
+      const option1 = document.getElementById("option1");
+      const option2 = document.getElementById("option2");
+      const option3 = document.getElementById("option3");
+      const option4 = document.getElementById("option4");
+      const option5 = document.getElementById("option5");
+
+      if (option1.checked) {
+        price += 1200;
+      }
+
+      if (option2.checked) {
+        price += 3000;
+      }
+
+      if (option3.checked) {
+        price += 800;
+      }
+
+      if (option4.checked) {
+        price += 4800;
+      }
+
+      if (option5.checked) {
+        price += 2400;
+      }
+
+      document.getElementById("total").value = price + "원";
+    }
+
+    // 페이지 로드 시 초기 토탈 가격 설정
+    document.getElementById("total").value = price + "원";
+  </script>
+</body>
+</html>

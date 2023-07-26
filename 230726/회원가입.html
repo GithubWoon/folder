@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>회원가입</h1>
+      <form action="#" id="register">
+        <ul id="user-info">
+          <li>
+            <label for="user-id">아이디</label>
+            <input
+              type="text"
+              id="user-id"
+              placeholder="4~8자리의 영문숫자 입력"
+              required
+            />
+          </li>
+
+          <li>
+            <label for="email">이메일</label>
+            <input type="email" id="email" required />
+          </li>
+
+          <li>
+            <label for="user-pw1">비밀번호</label>
+            <input
+              type="password"
+              id="user-pw1"
+              placeholder="8자리 이상"
+              required
+            />
+          </li>
+
+          <li>
+            <label for="user-pw2">비밀번호 g확인</label>
+            <input type="password" id="user-pw2" required />
+          </li>
+
+          <li>
+            <label>메일링 수신</label>
+            <label><input type="radio" value="yes" name="mailing" />예</label>
+            <label
+              ><input type="radio" value="no" name="mailing" />아니오</label
+            >
+          </li>
+        </ul>
+
+        <ul id="buttons">
+          <li>
+            <button type="submit">가입하기</button>
+          </li>
+
+          <li>
+            <button type="reset">취소</button>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <script>
+      // 아이디 필드를 가져와서 변수에 저장
+      let userId = document.querySelector("#user-id");
+      // 비밀번호 필드를 가져와서 변수에 저장
+      // 비밀번호 확인필드 가져와서 변수에 저장
+      userId.onchange = checkId;
+
+      //아이디 if 사용해서 4~8자리
+      function checkId(){
+        if (userId.value.length < 4 || userId.value.legnth > 8){
+            alert("4~8자리의 영문, 숫자를 입력하세요");
+            userId.select(); // 다시 입력할 수 있도록 userId필드 드래그 해놓음
+        }
+      }
+
+      //비밀번호 4자리 이상인지 비밀번호확인 필드와 같은지
+    </script>
+  </body>
+</html>

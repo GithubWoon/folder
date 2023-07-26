@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공부 주제 관리</title>
+</head>
+<body>
+    <input type="text" id="newtopic" placeholder="공부 주제를 입력하세요">
+    <button onclick="addTopic()">추가</button>
+    <ul id="topicList"></ul>
+
+    <script>
+        function addTopic() {
+            const input = document.getElementById("newtopic");
+            const topicList = document.getElementById("topicList");
+            const newTopic = input.value.trim();
+
+            if (newTopic === "") {
+                alert("주제를 입력하세요.");
+                return;
+            }
+
+            const listItem = document.createElement("li");
+            listItem.textContent = newTopic;
+
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "삭제";
+            deleteButton.onclick = function () {
+                topicList.removeChild(listItem);
+            };
+
+            listItem.appendChild(deleteButton);
+            topicList.appendChild(listItem);
+
+            input.value = "";
+        }
+
+        function deleteTopic(button) {
+            const topicList = document.getElementById("topicList");
+            const listItem = button.parentNode;
+            topicList.removeChild(listItem);
+        }
+    </script>
+</body>
+</html>
