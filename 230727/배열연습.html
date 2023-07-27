@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array 출력하기</title>
+  <style>
+    .box-container {
+      display: flex;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      border: 1px solid black;
+      margin: 5px;
+      text-align: center;
+      line-height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <h1>배열 요소 출력</h1>
+    <div class="box-container" id="total"></div>
+  </div>
+
+  <script>
+    const numbers = [2, 4, 6, 8, 10];
+    const total = document.getElementById("total");
+
+    // 배열 요소를 오른쪽으로 나열하여 박스 안에 담아 출력
+    numbers.forEach((number) => { // forEach 는 배열의 요소를 전부 순회하는데 이는 배열 요소들의 합을 구할때 유용합니다
+    // 
+      const box = document.createElement("div"); // 새로운 div 를 만드는데 이것을 box 라고 하자
+
+      box.classList.add("box"); // 새로운 박스를 생성하는데 이 박스는 box 클래스를 가지게 된다
+      // body 쪽에서 class 를 지정해주지 않은 이유는 매개변수에 따라 만들 박수의 개수가 달라지기 때문에
+      // 유동적인 박스 생성을 위하여 classList.add 를 사용하였다 
+      box.innerText = number; // 박스에는 매개변수: 입력값 "number" 가 들어가요
+
+      total.appendChild(box); // box 라는 변수안에 total 이라는 변수를 넣을게 정확히 이코드에서는 "div" 안에 "total" 을 넣겠다를 말함
+    });
+
+    
+
+    
+  </script>
+</body>
+
+</html>
+

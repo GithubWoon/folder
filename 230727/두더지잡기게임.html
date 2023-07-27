@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>두더지 잡기 게임</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #container {
+      text-align: center;
+    }
+
+    .hole {
+      width: 100px;
+      height: 100px;
+      background-color: #7f7f7f;
+      margin: 10px;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .mole {
+      width: 80px;
+      height: 80px;
+      background-color: #333;
+      border-radius: 50%;
+      position: relative;
+      top: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>두더지 잡기 게임</h1>
+    <p>점수: <span id="score">0</span></p>
+
+    <div class="hole" onclick="hitMole(0)"></div>
+    <div class="hole" onclick="hitMole(1)"></div>
+    <div class="hole" onclick="hitMole(2)"></div>
+    <div class="hole" onclick="hitMole(3)"></div>
+    <div class="hole" onclick="hitMole(4)"></div>
+    <div class="hole" onclick="hitMole(5)"></div>
+    <div class="hole" onclick="hitMole(6)"></div>
+    <div class="hole" onclick="hitMole(7)"></div>
+    <div class="hole" onclick="hitMole(8)"></div>
+    <div class="hole" onclick="hitMole(9)"></div>
+    <div class="hole" onclick="hitMole(10)"></div>
+    <!-- 나머지 홀 14개를 추가할 수 있습니다. -->
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    let score = 0;
+    let moles = [];
+
+    // 두더지를 나타내는 함수
+    function showMoles() {
+      if (moles.length === 0) {
+        const holes = document.getElementsByClassName("hole");
+        const randomHole = Math.floor(Math.random() * holes.length);
+        moles.push(randomHole);
+        holes[randomHole].innerHTML = '<div class="mole" onclick="hitMole(' + randomHole + ')"></div>';
+        
+        // 랜덤하게 2~3마리 두더지 추가
+        const numAdditionalMoles = 1 + Math.floor(Math.random() * 2); // 1~2
+        for (let i = 0; i < numAdditionalMoles; i++) {
+          const additionalHole = (randomHole + i + 1) % holes.length;
+          moles.push(additionalHole);
+          holes[additionalHole].innerHTML = '<div class="mole" onclick="hitMole(' + additionalHole + ')"></div>';
+        }
+      }
+    }
+
+    // 두더지 숨기는 함수
+    function hideMoles() {
+      const holes = document.getElementsByClassName("hole");
+      for (const mole of moles) {
+        holes[mole].innerHTML = '';
+      }
+      moles = [];
+    }
+
+    // 두더지를 친 함수
+    function hitMole(index) {
+      if (moles.includes(index)) {
+        score++;
+        document.getElementById("score").innerText = score;
+        const holes = document.getElementsByClassName("hole");
+        holes[index].innerHTML = '';
+        moles = moles.filter(mole => mole !== index);
+      }
+    }
+
+    // 게임 시작 함수
+    function startGame() {
+      score = 0;
+      document.getElementById("score").innerText = score;
+      moles = [];
+
+      // 1초마다 두더지 나타내기
+      setInterval(showMoles, 1000);
+    }
+
+    // 게임 시작
+   

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>클릭해보세요</h3>
+    <h5>할일목록</h5>
+    <ul>
+        <li><span class="check">할일1</span></li>
+        <li><span class="check">할일2</span></li>
+        <li><span class="check">할일3</span></li>
+        <li><span class="check">할일4</span></li>
+        <li><span class="check">할일5</span></li>
+    </ul>
+
+    <script>
+        let listB = document.querySelectorAll(".check");
+
+        for(let i=0; i<listB.length; i++){
+            listB[i].addEventListener("click", function(){
+                listB[i].parentNode.style.color = "red";
+                listB[i].parentNode.style.textDecoration = "line-through";
+                this.style.color = "blue";
+                this.style.backgroundColor = "lightgray"; // Color 대문자 Js에서는 대소문자를 가림
+                this.style.fontSize = "20px"; // Size 대문자
+            })
+        }
+    </script>
+</body>
+</html>

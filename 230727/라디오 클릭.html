@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="radioContainer">
+        <input type="radio" class="radioOption" value="option1"> 옵션1 
+        <input type="radio" class="radioOption" value="option2"> 옵션2 
+        <input type="radio" class="radioOption" value="option3"> 옵션3 
+    </div>
+
+    <script>
+        // 부모 요소에 이벤트 리스너 등록
+        document.getElementById("radioContainer").addEventListener("change", function(event){
+            // 이벤트가 발생한 요소확인
+            const target = event.target;
+
+            if (target.matches(".radioOption")){
+                console.log(target.value + "이 선택")
+            }
+
+            else {
+                console.log(target.value + "해제")
+            }
+            
+        });
+    </script>
+</body>
+</html>
+
+<!-- 그냥 script 짤때 html에서 value값 + id값 or class값을 지정해서 getElementById로 불러오자 -->

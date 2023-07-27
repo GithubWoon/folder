@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열 요소와 합 출력하기</title>
+  <style>
+    .box-container {
+      display: flex;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      border: 1px solid black;
+      margin: 5px;
+      text-align: center;
+      line-height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>배열 요소 출력</h1>
+    <div class="box-container" id="elements1"></div>
+    <div class="box-container" id="elements2"></div>
+  </div>
+
+  <script>
+    const numbers = [2, 4, 6, 8, 10];
+    let sum = 0;
+    const elementsContainer1 = document.getElementById("elements1");
+    const elementsContainer2 = document.getElementById("elements2");
+
+    // 배열 요소를 오른쪽으로 나열하여 박스 안에 담아 출력
+    numbers.forEach((number) => {
+      const box1 = document.createElement("div");
+      const box2 = document.createElement("div");
+
+      box1.classList.add("box");
+      box2.classList.add("box");
+
+      box1.innerText = "" + number + "";
+      box2.innerText = "" + number + "";
+
+      elementsContainer1.appendChild(box1);
+      elementsContainer2.appendChild(box2);
+
+      // 배열 요소들을 더하여 합산
+      sum += number;
+    });
+
+    // 합계를 마지막에 박스에 추가하여 출력
+    const sumBox = document.createElement("div");
+    sumBox.classList.add("box");
+    sumBox.innerText = "" + sum + "";
+    elementsContainer2.appendChild(sumBox);
+  </script>
+</body>
+</html>
