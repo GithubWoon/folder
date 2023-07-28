@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="room">
+        <h2>방명록</h2>
+        <label for="name"></label>
+        이름: <input type="text" id="name"><br>
+
+        <label for="visit"></label>
+        방문한곳: <input type="text" id="visit"><br>
+
+        <button onclick="Taewoon()">기록하기</button><br>
+        <div id="result"></div> 
+    </div>
+
+    <script>
+        function Taewoon(){
+            const name = document.getElementById("name").value;
+            const visit = document.getElementById("visit").value;
+            const resultDiv = document.getElementById("result"); // 대체 작성
+            
+            // 대체 작성, result div 부모요소에 li로 자식요소 만들어주자
+            const resultlist = document.createElement("li") // 대체 작성
+            resultlist.textContent = `${name}, ${visit}`; // resultlist 에 있는걸 텍스트 콘텐츠로 지정했다 즉 이름, 방문지가 뜸
+            resultDiv.appendChild(resultlist); // resultDiv 에 resultlist 를 자식요소 추가
+
+            // 결과창 문구
+            document.getElementById("name").value = "";
+            document.getElementById("visit").value = "";
+        }
+    </script>
+</body>
+</html>

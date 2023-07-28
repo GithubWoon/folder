@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        button{
+            height: 150px;
+
+        }
+        .note{
+            margin: 15px;
+            background-color: skyblue;
+            padding: 10px;
+            border-left: 3px solid blue;
+        }
+        #note-box{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div id="note-box"></div>
+    <button id="btn">알림<br>메세지</button>
+    
+
+    <script>
+        const btn = document.querySelector("#btn");
+        const notebox = document.querySelector("#note-box");
+
+        btn.addEventListener('click', () => {
+            const note = document.createElement("div");
+            note.classList.add("note"); // 노트라는 클래스에 리스트로 추가
+            note.innerText = "팝업으로 띄울내용";
+            noteBox.appendChild(note);
+
+            setTimeout(() => {
+                note.remove();
+            }, 3000 );
+        });
+
+        function gretting(){
+        console.log("안녕하세요");
+        }
+        
+        setInterval(gretting, 2000);
+    </script>
+</body>
+</html>

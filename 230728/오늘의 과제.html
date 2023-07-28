@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#t1, div{
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<h3>방명록</h3>
+<form name = "f">
+<table id = "t1">
+<tr><th> 이름</th><td><input type = "text" name = "writer" id = "writer"></td></tr>
+<tr><th> 방문한곳</th><td><input type = "text" name = "content" id = "content"></td></tr>
+<tr><th> 기록하기</th><td><input type = "button" name = "작성" value = "작성" onclick="a()"></td></tr>
+</table>
+</form>
+
+<div id = "list"></div>
+
+<script>
+    let cnt = 1;
+    function a(){
+        let writer = f.writer.value;
+        let content = f.content.value; 
+        let el = mkDiv(writer, content); 
+        
+        let list = document.getElementById("list"); 
+        list.appendChild(el);
+        
+    }
+    
+    function mkDiv(writer, content){ 
+        let newDiv = document.createElement("div"); 
+        // <div id = "d_1" pwd = '111'>
+        //새 div 태그 생성
+        newDiv.id = "d_" + cnt++; //고유 id 할당. 생성한 div에 id를 지정. d_1, d_2의 형식. cnt 값을 붙여줌
+        let html = ""; //생성된 div에 출력될 내용을 작성한 변수
+        html += "이름: " +writer+"<br/>";
+        html += "방문한곳: " +content+"<br/>";
+        newDiv.innerHTML = html; //위의 html 내용을 전부 받아옴
+        return newDiv; //받아온 내용 return
+    }
+    
+    </script>
+</body>
+</html>

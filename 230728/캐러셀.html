@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <h3>ㅎㅇ</h3>
+    
+    <div id="container">
+        <div class="arrow" id="left"> &rang; </div>
+        <div class="arrow" id="right"> &rang; </div>
+    </div>
+
+    <script>
+        const container = document.querySelector("#container");
+        const pics = [`개발진스.png`, `개발진스2.png`, `개발진스3.png`, `개발진스4.png`];
+
+        container.style.backgroundImage = `url(/images/${pics[0]}`;
+        const arrows = document.querySelectorAll(".arrow")
+
+        arrows.forEach(arrow => {
+            arrow.addEventListener("click", (e) => {
+                if(e.target.id === "left"){
+                    i--;
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
